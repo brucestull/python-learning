@@ -1,12 +1,12 @@
 #******************************#
-# Project: Generator Object
+# Project: List Comprehension
 #
 #        Version: 1.0
 #    Author: Bruce Stull
 #   Date: December 19, 2021
 #******************************#
 
-# List comprehension is probably a better description. Even though the created object is a generator object, the thing created might be a list or similar.
+# List comprehension is probably a better description. Even though the created object is a List Comprehension, the thing created might be a list or similar.
 # Link to list comprehension: https://www.programiz.com/python-programming/list-comprehension
 
 # return f(g(h() + <value>) for <index of object> in <object> if <condition>)

@@ -33,6 +33,6 @@ print(dog)  # ('bad', 'barky', 'bitey')
 #     # furry
 #     # purry
 
-# Can we apply generator object here? The tuple has been converted to a list.
+# Can we apply List Comprehension here? The tuple has been converted to a list.
 # print([element for element in cat]) # ['fuzzy', 'furry', 'purry']
 
