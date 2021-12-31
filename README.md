@@ -7,3 +7,6 @@ https://github.com/brucestull/PythonLearning
 ## Resources:
 ### Fomatting of .md
 #### https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text
+
+# CodeWars link:
+https://www.codewars.com/users/BruceStull/completed_solutions
