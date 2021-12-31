@@ -1,11 +1,12 @@
 #******************************#
 # Project: Codewars is_pangram()
-# https://www.codewars.com/kata/545cedaa9943f7fe7b000048
 #          Find It
 #        Version: 1.0
 #    Author: Bruce Stull
 #   Date: December 30, 2021
 #******************************#
+
+# https://www.codewars.com/kata/545cedaa9943f7fe7b000048
 
 # import string
 
