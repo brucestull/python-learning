@@ -1,3 +1,10 @@
+# *********************** #
+#   Author: Bruce Stull   #
+#   Signature Generator   #
+#       Version: 0.0      #
+#        2022-01-04       #
+# *********************** #
+
 welcome_string = "\nWelcome to Signature Generator!\n"
 print(welcome_string)
 
