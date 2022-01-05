@@ -18,6 +18,9 @@ author_name = "Bruce Stull"
 # Prompt user for 'Project Name'.
 project_name = input("Please enter project name: ")
 
+# Project sub-title.
+project_subtitle = input("Please enter project subtitle: ")
+
 # Prompt user for version number.
 version_number = input("Please enter version number: ")
 
@@ -28,7 +31,7 @@ current_date = date.today()
 # current_date = input("Please enter the date: ")
 
 # Combine variables into a list so we can determine how wide to make the asterisk lines.
-field_list = ["Author: " + author_name, project_name, "Version: " + version_number, str(current_date)]
+field_list = ["Author: " + author_name, project_name, project_subtitle, "Version: " + version_number, str(current_date)]
 print(field_list)
 
 field_sizes = []
