@@ -1,8 +1,12 @@
 welcome_string = "\nWelcome to Signature Generator!\n"
 print(welcome_string)
 
+# TODO: Add functionality where I only get prompted for the project name and version number.
+# Have other stuff pull from variables in this file or a separate file.
+
 # Prompt user for "Author" name.
-author_name = input("Enter your name: ")
+# author_name = input("Enter your name: ")
+author_name = "Bruce Stull"
 
 # Prompt user for 'Project Name'.
 project_name = input("Please enter project name: ")
@@ -11,14 +15,13 @@ project_name = input("Please enter project name: ")
 version_number = input("Please enter version number: ")
 
 # TODO: Add functionality where user decides whether to auto-populate current date or use manually entered date.
-# TODO: Add functionality where date is auto populated by code.
 from datetime import date
 current_date = date.today()
 # # Prompt user for date.
 # current_date = input("Please enter the date: ")
 
 # Combine variables into a list so we can determine how wide to make the asterisk lines.
-field_list = [author_name, project_name, version_number, str(current_date)]
+field_list = ["Author: " + author_name, project_name, "Version: " + version_number, str(current_date)]
 print(field_list)
 
 field_sizes = []
@@ -38,5 +41,5 @@ print(required_width)
 
 print(pound_sign, asterisk * required_width, pound_sign)
 for item in field_list:
-    print('  ' + item.center(required_width))
+    print(pound_sign, item.center(required_width), pound_sign)
 print(pound_sign, asterisk * required_width, pound_sign)
