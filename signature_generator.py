@@ -31,7 +31,7 @@ current_date = date.today()
 # current_date = input("Please enter the date: ")
 
 # Combine variables into a list so we can determine how wide to make the asterisk lines.
-field_list = ["Author: " + author_name, project_name, project_subtitle, "Version: " + version_number, str(current_date)]
+field_list = [project_name, project_subtitle, "Version: " + version_number, "Author: " + author_name, str(current_date)]
 print(field_list)
 
 field_sizes = []
