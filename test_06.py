@@ -52,8 +52,10 @@ False or False:{False or False}
 text = 'hihi hh hillh'
 result = 0
 for i, character in enumerate(text):
+    # Break out of loop at end so we don't have an index out of range.
     if i == len(text) - 1:
         break
+    # Check if i follows an h.
     if character == 'h':
         if text[i + 1] == 'i':
             result += 1
