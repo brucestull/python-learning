@@ -5,7 +5,7 @@ Repository for learning and practicing Python.
 https://github.com/brucestull/PythonLearning
 
 Signature Generator v00:
-https://github.com/brucestull/PythonLearning/blob/version_00/signature_generator.py
+https://github.com/brucestull/PythonLearning/signature_generator.py
 
 ## Resources:
 ### Fomatting of .md
