@@ -1,10 +1,12 @@
-#******************************#
-# Project: CodeWars
-#      alphabet position
-#        Version: 1.0
-#    Author: Bruce Stull
-#   Date: December 13, 2021
-#******************************#
+# *********************** #
+#    Project: CodeWars    #
+#    alphabet position    #
+#    List Comprehension   #
+#       Version: 1.0      #
+#   Author: Bruce Stull   #
+#        2021-12-13       #
+# *********************** #
+
 
 import string
 from typing import ValuesView

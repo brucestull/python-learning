@@ -1,14 +1,16 @@
-# *********************** #
-#   Author: Bruce Stull   #
-#   Signature Generator   #
-#       Version: 0.0      #
-#        2022-01-04       #
-# *********************** #
+# ******************************** #
+#   Project: Signature Generator   #
+#           Version: 0.1           #
+#       Author: Bruce Stull        #
+#            2023-01-28            #
+# ******************************** #
+
 
 welcome_string = "\nWelcome to Signature Generator!\n"
 print(welcome_string)
 
-# TODO: Add functionality where I only get prompted for the project name and version number.
+# TODO: Add functionality where I only get prompted for the project name
+# and version number.
 # Have other stuff pull from variables in this file or a separate file.
 
 # Prompt user for "Author" name.
@@ -18,20 +20,30 @@ author_name = "Bruce Stull"
 # Prompt user for 'Project Name'.
 project_name = input("Please enter project name: ")
 
-# Project sub-title.
-project_subtitle = input("Please enter project subtitle: ")
+# Project sub-titles.
+project_subtitle_00 = input("Please enter project first subtitle: ")
+project_subtitle_01 = input("Please enter project second subtitle: ")
 
 # Prompt user for version number.
 version_number = input("Please enter version number: ")
 
-# TODO: Add functionality where user decides whether to auto-populate current date or use manually entered date.
+# TODO: Add functionality where user decides whether to auto-populate
+# current date or use manually entered date.
 from datetime import date
 current_date = date.today()
 # # Prompt user for date.
 # current_date = input("Please enter the date: ")
 
-# Combine variables into a list so we can determine how wide to make the asterisk lines.
-field_list = [project_name, project_subtitle, "Version: " + version_number, "Author: " + author_name, str(current_date)]
+# Combine variables into a list so we can determine how wide to make the
+# asterisk lines.
+field_list = [
+    "Project: " + project_name,
+    project_subtitle_00,
+    project_subtitle_01,
+    "Version: " + version_number,
+    "Author: " + author_name,
+    str(current_date)
+]
 print(field_list)
 
 field_sizes = []
@@ -39,7 +51,8 @@ for item in field_list:
     field_sizes.append(len(str(item)))
 print(field_sizes)
 
-# Create variable for how much padding to place on sides of longest character in signature_list.
+# Create variable for how much padding to place on sides of longest
+# character in signature_list.
 padding = 4
 
 #
