@@ -30,7 +30,7 @@ print(f'''
 True or True:  {True or True}
 True or False: {True or False}
 False or True: {False or True}
-False or False:{False or False}
+False or False: {False or False}
 ''')
 
 # True or True:  True

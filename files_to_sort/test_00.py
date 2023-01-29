@@ -1,5 +1,6 @@
 def print_movie_ratings(username, *args, **kwargs):
-    """Update the user’s ratings for movies.
+    """
+    Update the user’s ratings for movies.
     Update movies from *args that are keys in **kwargs.
     """
 
@@ -14,7 +15,9 @@ def print_movie_ratings(username, *args, **kwargs):
 
 print_movie_ratings('jane', 'Sharknado', 'Frozen', 'Transformers', Sharknado=3, Frozen=2, Fargo=5)
 
-""" Output is:
+"""
+Output is:
+
 Sharknado 3
 Frozen 2
 """
