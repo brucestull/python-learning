@@ -1,5 +1,6 @@
 import os
 
+
 def load_lines_from_file(file_name):
     base_path = os.path.dirname(__file__)
     lines = []
@@ -15,8 +16,14 @@ def load_lines_from_file(file_name):
 def test_load_lines_from_file():
     assert load_lines_from_file('') == None
     assert load_lines_from_file('not_a_file.txt') == None
-    assert load_lines_from_file('a_real_file.txt') == ['This is a test file']
-    assert load_lines_from_file('multi_line_file.txt') == ['This is a test file', 'Testing for multiple lines of text;', 'in a single file']
+    assert load_lines_from_file('a_real_file.txt') == [
+        'This is a test file'
+    ]
+    assert load_lines_from_file('multi_line_file.txt') == [
+        'This is a test file',
+        'Testing for multiple lines of text;',
+        'in a single file'
+    ]
     assert load_lines_from_file('empty_file.txt') == ['']
 
 def get_row_cells(csv_line):
@@ -28,7 +35,12 @@ def get_row_cells(csv_line):
 
 def test_get_row_cells():
     sample_lines = load_lines_from_file('basic.csv')
-    assert get_row_cells(sample_lines[0]) == ['header a', 'header b', 'header c', 'header d']
+    assert get_row_cells(sample_lines[0]) == [
+        'header a',
+        'header b',
+        'header c',
+        'header d'
+    ]
     assert get_row_cells(sample_lines[1]) == ['1', '5', '3', '9']
     assert get_row_cells(sample_lines[2]) == ['2', '4', '5', '6']
     assert get_row_cells(sample_lines[3]) == ['3', '5', '2', '0']
@@ -47,13 +59,28 @@ def test_create_entry():
     sample_headers = get_row_cells(sample_lines[0])
 
     row = get_row_cells(sample_lines[1])
-    assert create_entry(sample_headers, row) == {f'{sample_headers[0]}': f'{row[0]}', f'{sample_headers[1]}': f'{row[1]}', f'{sample_headers[2]}': f'{row[2]}', f'{sample_headers[3]}': f'{row[3]}'}
+    assert create_entry(sample_headers, row) == {
+        f'{sample_headers[0]}': f'{row[0]}',
+        f'{sample_headers[1]}': f'{row[1]}',
+        f'{sample_headers[2]}': f'{row[2]}',
+        f'{sample_headers[3]}': f'{row[3]}'
+    }
 
     row = get_row_cells(sample_lines[3])
-    assert create_entry(sample_headers, row) == {f'{sample_headers[0]}': f'{row[0]}', f'{sample_headers[1]}': f'{row[1]}', f'{sample_headers[2]}': f'{row[2]}', f'{sample_headers[3]}': f'{row[3]}'}
+    assert create_entry(sample_headers, row) == {
+        f'{sample_headers[0]}': f'{row[0]}',
+        f'{sample_headers[1]}': f'{row[1]}',
+        f'{sample_headers[2]}': f'{row[2]}',
+        f'{sample_headers[3]}': f'{row[3]}'
+    }
 
     row = get_row_cells(sample_lines[6])
-    assert create_entry(sample_headers, row) == {f'{sample_headers[0]}': f'{row[0]}', f'{sample_headers[1]}': f'{row[1]}', f'{sample_headers[2]}': f'{row[2]}', f'{sample_headers[3]}': f'{row[3]}'}
+    assert create_entry(sample_headers, row) == {
+        f'{sample_headers[0]}': f'{row[0]}',
+        f'{sample_headers[1]}': f'{row[1]}',
+        f'{sample_headers[2]}': f'{row[2]}',
+        f'{sample_headers[3]}': f'{row[3]}'
+    }
 
 def process_csv(csv_lines):
     headers = get_row_cells(csv_lines[0])
@@ -71,16 +98,53 @@ def process_csv(csv_lines):
 def test_process_csv():
     sample_lines = load_lines_from_file('basic.csv')
     sample_headers = get_row_cells(sample_lines[0])
-    rows = [get_row_cells(sample_lines[1]), get_row_cells(sample_lines[2]), get_row_cells(sample_lines[3]), get_row_cells(sample_lines[4]), get_row_cells(sample_lines[5]), get_row_cells(sample_lines[6])]
+    rows = [
+        get_row_cells(sample_lines[1]),
+        get_row_cells(sample_lines[2]),
+        get_row_cells(sample_lines[3]),
+        get_row_cells(sample_lines[4]),
+        get_row_cells(sample_lines[5]),
+        get_row_cells(sample_lines[6])
+    ]
     
     sample_table, table_id_header = process_csv(sample_lines)
     assert sample_table == [
-        {f'{sample_headers[0]}': f'{rows[0][0]}', f'{sample_headers[1]}': f'{rows[0][1]}', f'{sample_headers[2]}': f'{rows[0][2]}', f'{sample_headers[3]}': f'{rows[0][3]}'},
-        {f'{sample_headers[0]}': f'{rows[1][0]}', f'{sample_headers[1]}': f'{rows[1][1]}', f'{sample_headers[2]}': f'{rows[1][2]}', f'{sample_headers[3]}': f'{rows[1][3]}'},
-        {f'{sample_headers[0]}': f'{rows[2][0]}', f'{sample_headers[1]}': f'{rows[2][1]}', f'{sample_headers[2]}': f'{rows[2][2]}', f'{sample_headers[3]}': f'{rows[2][3]}'},
-        {f'{sample_headers[0]}': f'{rows[3][0]}', f'{sample_headers[1]}': f'{rows[3][1]}', f'{sample_headers[2]}': f'{rows[3][2]}', f'{sample_headers[3]}': f'{rows[3][3]}'},
-        {f'{sample_headers[0]}': f'{rows[4][0]}', f'{sample_headers[1]}': f'{rows[4][1]}', f'{sample_headers[2]}': f'{rows[4][2]}', f'{sample_headers[3]}': f'{rows[4][3]}'},
-        {f'{sample_headers[0]}': f'{rows[5][0]}', f'{sample_headers[1]}': f'{rows[5][1]}', f'{sample_headers[2]}': f'{rows[5][2]}', f'{sample_headers[3]}': f'{rows[5][3]}'}
+        {
+            f'{sample_headers[0]}': f'{rows[0][0]}',
+            f'{sample_headers[1]}': f'{rows[0][1]}',
+            f'{sample_headers[2]}': f'{rows[0][2]}',
+            f'{sample_headers[3]}': f'{rows[0][3]}'
+        },
+        {
+            f'{sample_headers[0]}': f'{rows[1][0]}',
+            f'{sample_headers[1]}': f'{rows[1][1]}',
+            f'{sample_headers[2]}': f'{rows[1][2]}',
+            f'{sample_headers[3]}': f'{rows[1][3]}'
+        },
+        {
+            f'{sample_headers[0]}': f'{rows[2][0]}',
+            f'{sample_headers[1]}': f'{rows[2][1]}',
+            f'{sample_headers[2]}': f'{rows[2][2]}',
+            f'{sample_headers[3]}': f'{rows[2][3]}'
+        },
+        {
+            f'{sample_headers[0]}': f'{rows[3][0]}',
+            f'{sample_headers[1]}': f'{rows[3][1]}',
+            f'{sample_headers[2]}': f'{rows[3][2]}',
+            f'{sample_headers[3]}': f'{rows[3][3]}'
+        },
+        {
+            f'{sample_headers[0]}': f'{rows[4][0]}',
+            f'{sample_headers[1]}': f'{rows[4][1]}',
+            f'{sample_headers[2]}': f'{rows[4][2]}',
+            f'{sample_headers[3]}': f'{rows[4][3]}'
+        },
+        {
+            f'{sample_headers[0]}': f'{rows[5][0]}',
+            f'{sample_headers[1]}': f'{rows[5][1]}',
+            f'{sample_headers[2]}': f'{rows[5][2]}',
+            f'{sample_headers[3]}': f'{rows[5][3]}'
+        }
     ]
     assert table_id_header == 'header a'
 
@@ -90,7 +154,11 @@ def create_record(table, table_id_header, name, favorite_fruit, favorite_color):
         if entry[table_id_header] == name:
             return table
 
-    entry = {'name': name, 'favorite fruit': favorite_fruit, 'favorite color': favorite_color}
+    entry = {
+        'name': name,
+        'favorite fruit': favorite_fruit,
+        'favorite color': favorite_color
+    }
     table.append(entry)
     return table
 
@@ -112,7 +180,11 @@ def retrieve_record(table, table_id_header, name):
 
 def test_retrieve_record():
     sample_contacts, table_id_header = process_csv(load_lines_from_file('my_contacts.csv'))
-    assert retrieve_record(sample_contacts, table_id_header, 'sam') == {'name': 'sam', 'favorite fruit': 'pineapple', 'favorite color': 'blue'}
+    assert retrieve_record(sample_contacts, table_id_header, 'sam') == {
+        'name': 'sam',
+        'favorite fruit': 'pineapple',
+        'favorite color': 'blue'
+    }
     assert retrieve_record(sample_contacts, table_id_header, 'bacon') == None
 
 def update_record(table, table_id_header, name, updates):
@@ -125,7 +197,16 @@ def update_record(table, table_id_header, name, updates):
 
 def test_update_record():
     sample_contacts, table_id_header = process_csv(load_lines_from_file('my_contacts.csv'))
-    assert update_record(sample_contacts, table_id_header, 'sam', {'favorite color': 'yellow'}) == {'name': 'sam', 'favorite fruit': 'pineapple', 'favorite color': 'yellow'}
+    assert update_record(
+        sample_contacts,
+        table_id_header,
+        'sam',
+        {'favorite color': 'yellow'}
+    ) == {
+        'name': 'sam',
+        'favorite fruit': 'pineapple',
+        'favorite color': 'yellow'
+    }
 
 def delete_record(table, table_id_header, name):
     record_found = False
@@ -154,7 +235,15 @@ def test_delete_record():
 def clean_command_input(command_string):
     command_string = str(command_string)[0:1].upper()
 
-    if command_string == 'C' or command_string == 'R' or command_string == 'U' or command_string == 'D' or command_string == 'Q' or command_string == 'Y' or command_string == 'N':
+    if (
+        command_string == 'C' or 
+        command_string == 'R' or 
+        command_string == 'U' or 
+        command_string == 'D' or 
+        command_string == 'Q' or 
+        command_string == 'Y' or 
+        command_string == 'N'
+    ):
         return command_string
     
     return ''
@@ -265,4 +354,5 @@ def main():
     write_to_db(contacts_list, file_name)
 
 
-main()
+if __name__ == '__main__':
+    main()
